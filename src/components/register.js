@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { Spinner } from "react-bootstrap";
 
 // import React from "react";
 
@@ -9,6 +12,8 @@ const Register = () => {
         setToggleState(index);
         // setIsActive(current => !current);
     }
+    const [isLoading, SetLoading] = useState(false);
+
 
     const [firstname, setFirstname] = useState("");
     const [lastname, setLastname] = useState("");
@@ -77,10 +82,10 @@ const Register = () => {
     const [bachelors, setBachelors] = useState("");
 
     let handleSubmit = async (e) => {
-        
+        SetLoading(true)
         e.preventDefault();
         try {
-          await fetch("http://44.202.98.199:9000/add_students", {
+          await fetch("http://127.0.0.1:9001/add_students", {
             
             method: "POST",
             body: JSON.stringify({
@@ -156,13 +161,24 @@ const Register = () => {
           }).then(results => results.json())
           .then((response) => {
             console.log(response)
-          })
+            if (response.status === 100) {
+                  SetLoading(false)
+                  toast(response.message)
+              
+            } else {
+              SetLoading(false)
+              toast(response.message)
+          
+            }
+            })
+          
         } catch (err) {
           console.log(err);
         }
       };
     return(
         <div>
+            <ToastContainer />
             <div className="main">
 		<h1> KCU 2022AP $ 2022AG INTAKE REG FORM</h1>
 		<div className="content">
@@ -447,6 +463,12 @@ const Register = () => {
                                                     <input type="text" value={bachelors} onChange={(e) => setBachelors(e.target.value)} /> 				
 												</div>	
 												<input type="submit" value="SUBMIT" />
+                                                {/* <div>
+                                                { 
+                                                    isLoading ? <input type="submit" value="SUBMIT"><Spinner animation="border" variant="light" /></input> : <input type="submit" value="SUBMIT"></input>
+                                                }
+                                                </div> */}
+                                            {/* <div className="message">{response.message ? <p>{response.message}</p> : null}</div> */}
 											</form>
 										
 											{/* <div className="single-bottom">
