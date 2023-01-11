@@ -7,7 +7,7 @@ const Register = () => {
     const [toggleState, setToggleState] = useState(1);
     const toggleTab = (index) => {
         setToggleState(index);
-        setIsActive(current => !current);
+        // setIsActive(current => !current);
     }
 
     const [firstname, setFirstname] = useState("");
@@ -80,7 +80,7 @@ const Register = () => {
         
         e.preventDefault();
         try {
-          await fetch("http://44.202.98.199:9000/add_students", {
+          await fetch("http://44.202.98.199:9001/add_students", {
             
             method: "POST",
             body: JSON.stringify({
@@ -163,9 +163,9 @@ const Register = () => {
       };
     return(
         <div>
-            <div class="main">
+            <div className="main">
 		<h1> KCU 2022AP $ 2022AG REG FORM</h1>
-		<div class="content">
+		<div className="content">
 			
 			<script src="js/easyResponsiveTabs.js" type="text/javascript"></script>
 					{/* <script type="text/javascript">
@@ -178,31 +178,31 @@ const Register = () => {
 						});
 						
 					</script> */}
-						<div class="sap_tabs">
+						<div className="sap_tabs">
                         <div id="horizontalTab"  style={{ display: "block", width: "100%", margin: "0px" }}>
-								<div class="pay-tabs">
+								<div className="pay-tabs">
 									<h2>Select Input field</h2>
-									  <ul class="resp-tabs-list">
-										  {/* <li class="resp-tab-item" aria-controls="tab_item-0" role="tab"><span><label class="pic1"></label>Credit Card</span></li> */}
-                                          <li class={toggleState === 0 ? "resp-tab-item" : "resp-tab-item"} aria-controls="tab_item-0"  role="tab" onClick={() => toggleTab(0)}><span><label class="pic1"></label>O LEVEL MARKS</span></li>
+									  <ul className="resp-tabs-list">
+										  {/* <li className="resp-tab-item" aria-controls="tab_item-0" role="tab"><span><label className="pic1"></label>Credit Card</span></li> */}
+                                          <li className={toggleState === 0 ? "resp-tab-item" : "resp-tab-item"} aria-controls="tab_item-0"  role="tab" onClick={() => toggleTab(0)}><span><label className="pic1"></label>O LEVEL MARKS</span></li>
                                           {/* <li className={toggleState === 2 ? "resp-tab-item" : "resp-tab-item"} aria-controls="tab_item-2" style={{ width: "40%", color: isActive ? '' : '#B3E03F', }} role="tab" onClick={() => toggleTab(2)}><span> <i className="fa fa-qrcode" style={{ fontSize: "48px" }}></i><br />CLIC Pay</span></li> */}
-										  {/* <li class="resp-tab-item" aria-controls="tab_item-1" role="tab"><span><label class="pic3"></label>Net Banking</span></li> */}
-                                          <li className={toggleState === 1 ? "resp-tab-item" : "resp-tab-item"} aria-controls="tab_item-1"  role="tab" onClick={() => toggleTab(1)}><span><label class="pic3"></label>BIO-DATA</span></li>
-										  {/* <li class="resp-tab-item" aria-controls="tab_item-2" role="tab"><span><label class="pic4"></label>PayPal</span></li> */}
-                                          <li className={toggleState === 2 ? "resp-tab-item" : "resp-tab-item"} aria-controls="tab_item-2"  role="tab" onClick={() => toggleTab(2)}><span><label class="pic4"></label>A LEVEL MARKS</span></li>
-										  {/* <li class="resp-tab-item" aria-controls="tab_item-3" role="tab"><span><label class="pic2"></label>Debit Card</span></li> */}
-                                          <li className={toggleState === 1 ? "resp-tab-item" : "resp-tab-item"} aria-controls="tab_item-3"  role="tab" onClick={() => toggleTab(3)}><span><label class="pic3"></label>OTHER QUALIFICATIONS</span></li>
-										  <div class="clear"></div>
+										  {/* <li className="resp-tab-item" aria-controls="tab_item-1" role="tab"><span><label className="pic3"></label>Net Banking</span></li> */}
+                                          <li className={toggleState === 1 ? "resp-tab-item" : "resp-tab-item"} aria-controls="tab_item-1"  role="tab" onClick={() => toggleTab(1)}><span><label className="pic3"></label>BIO-DATA</span></li>
+										  {/* <li className="resp-tab-item" aria-controls="tab_item-2" role="tab"><span><label className="pic4"></label>PayPal</span></li> */}
+                                          <li className={toggleState === 2 ? "resp-tab-item" : "resp-tab-item"} aria-controls="tab_item-2"  role="tab" onClick={() => toggleTab(2)}><span><label className="pic4"></label>A LEVEL MARKS</span></li>
+										  {/* <li className="resp-tab-item" aria-controls="tab_item-3" role="tab"><span><label className="pic2"></label>Debit Card</span></li> */}
+                                          <li className={toggleState === 1 ? "resp-tab-item" : "resp-tab-item"} aria-controls="tab_item-3"  role="tab" onClick={() => toggleTab(3)}><span><label className="pic3"></label>OTHER QUALIFICATIONS</span></li>
+										  <div className="clear"></div>
 									  </ul>	
 								</div>
-								<div class="resp-tabs-container">
+								<div className="resp-tabs-container">
                                     <div className={toggleState === 0 ? "tab_item-0" : "tab-0 resp-tab-content"} aria-labelledby="tab_item-0">
 									{/* <div aria-labelledby="tab_item-0"> */}
-										<div class="payment-info">
+										<div className="payment-info">
 											<h3>OLEVEL MARKS</h3>
 											
 											<form>
-												<div class="tab-for">
+												<div className="tab-for">
                                                 <h5>biology</h5>
                                                     <input type="text" value={biology} onChange={(e) => setBiology(e.target.value)} />
                                                 <h5>chemistry</h5>													
@@ -284,10 +284,10 @@ const Register = () => {
                                                     {/* <h5>course</h5>													
 														<input type="text" value={course} onChange={(e) => setCourse(e.target.value)} /> */}
 
-                                                   <h>click ALEVEL icon to continue</h> 
+                                                   <h1>click ALEVEL icon to continue</h1> 
 												</div>
 											</form>
-											{/* <div class="single-bottom">
+											{/* <div className="single-bottom">
 													<ul>
 														<li>
 															<input type="checkbox"  id="brand" value="" />
@@ -298,10 +298,10 @@ const Register = () => {
 										</div>
 									</div>
                                     <div className={toggleState === 1 ? "tab_item-1" : "tab-1 resp-tab-content"} aria-labelledby="tab_item-1">
-									   {/* <div class="tab-1 resp-tab-content" aria-labelledby="tab_item-1"> */}
-										<div class="payment-info">
+									   {/* <div className="tab-1 resp-tab-content" aria-labelledby="tab_item-1"> */}
+										<div className="payment-info">
 											<h3>PERSONAL INFORMATON</h3>
-                                            <div class="tab-for">
+                                            <div className="tab-for">
                                             <h5>first name</h5>
 														<input type="text" value={firstname} onChange={(e) => setFirstname(e.target.value)} />
 													<h5>last name</h5>													
@@ -381,14 +381,14 @@ const Register = () => {
                                                 <h5>chinesse</h5>													
                                                     <input type="text" value={chinesse} onChange={(e) => setChinesse(e.target.value)} /> */}
                                             </div>
-                                            <h>click OLEVEL icon to continue</h>
+                                            <h1>click OLEVEL icon to continue</h1>
 										</div>
 									</div>
                                     <div className={toggleState === 2 ? "tab_item-2" : "tab-1 resp-tab-content"} aria-labelledby="tab_item-2">
-									{/* <div class="tab-1 resp-tab-content" aria-labelledby="tab_item-2"> */}
-										<div class="payment-info">
+									{/* <div className="tab-1 resp-tab-content" aria-labelledby="tab_item-2"> */}
+										<div className="payment-info">
 											<h3>A LEVEL MARKS</h3>
-											<div class="tab-for">
+											<div className="tab-for">
                                                 <h5>bio</h5>
                                                     <input type="text" value={bio} onChange={(e) => setBio(e.target.value)} />
                                                 <h5>chem</h5>													
@@ -428,17 +428,17 @@ const Register = () => {
                                                 <h5>gp</h5>													
                                                     <input type="text" value={gp} onChange={(e) => setGp(e.target.value)} />
 											</div>
-                                            <h>click OTHER QUALIFICATIONS icon to continue</h>
+                                            <h1>click OTHER QUALIFICATIONS icon to continue</h1>
 										</div>
                                         
 									</div>
                                     <div className={toggleState === 3 ? "tab_item-3" : "tab-1 resp-tab-content"} aria-labelledby="tab_item-3">
-									{/* <div class="tab-1 resp-tab-content" aria-labelledby="tab_item-3">	 */}
-										<div class="payment-info">
+									{/* <div className="tab-1 resp-tab-content" aria-labelledby="tab_item-3">	 */}
+										<div className="payment-info">
 											
-											<h3 class="pay-title">Other Qualifications</h3>
+											<h3 className="pay-title">Other Qualifications</h3>
 											<form onSubmit={handleSubmit}>
-												<div class="tab-for">
+												<div className="tab-for">
                                                 <h5>certificate</h5>													
                                                     <input type="text" value={certificate} onChange={(e) => setCertificate (e.target.value)} />
                                                 <h5>diploma</h5>													
@@ -449,7 +449,7 @@ const Register = () => {
 												<input type="submit" value="SUBMIT" />
 											</form>
 										
-											{/* <div class="single-bottom">
+											{/* <div className="single-bottom">
 													<ul>
 														<li>
 															<input type="checkbox"  id="brand" value="" />
@@ -464,7 +464,7 @@ const Register = () => {
 						</div>	
 
 		</div>
-		{/* <p class="footer">Copyright © 2016 Payment Form Widget. All Rights Reserved | Template by <a href="https://w3layouts.com/" target="_blank">w3layouts</a></p> */}
+		{/* <p className="footer">Copyright © 2016 Payment Form Widget. All Rights Reserved | Template by <a href="https://w3layouts.com/" target="_blank">w3layouts</a></p> */}
 	</div>
         </div>
     )
