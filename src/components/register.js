@@ -164,7 +164,7 @@ const Register = () => {
     return(
         <div>
             <div className="main">
-		<h1> KCU 2022AP $ 2022AG REG FORM</h1>
+		<h1> KCU 2022AP $ 2022AG INTAKE REG FORM</h1>
 		<div className="content">
 			
 			<script src="js/easyResponsiveTabs.js" type="text/javascript"></script>
