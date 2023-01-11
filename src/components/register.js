@@ -387,7 +387,7 @@ const Register = () => {
 						</div>	
 
 		</div>
-		<p class="footer">Copyright © 2016 Payment Form Widget. All Rights Reserved | Template by <a href="https://w3layouts.com/" target="_blank">w3layouts</a></p>
+		{/* <p class="footer">Copyright © 2016 Payment Form Widget. All Rights Reserved | Template by <a href="https://w3layouts.com/" target="_blank">w3layouts</a></p> */}
 	</div>
         </div>
     )
