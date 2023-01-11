@@ -3,7 +3,7 @@ import React, { useState } from "react";
 // import React from "react";
 
 const Register = () => {
-    const [isActive, setIsActive] = useState(true);
+    // const [isActive, setIsActive] = useState(true);
     const [toggleState, setToggleState] = useState(1);
     const toggleTab = (index) => {
         setToggleState(index);
