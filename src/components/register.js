@@ -306,7 +306,7 @@ const Register = () => {
 														<input type="text" value={chinesse} onChange={(e) => setChinesse(e.target.value)} />
                                             </div>
 											{/* <a href="#">Continue</a> */}
-                                             <a class={toggleState === 0 ? "resp-tab-item" : "resp-tab-item"} aria-controls="tab_item-0" role="tab" onClick={() => toggleTab(0)}>continue</a>
+                                             {/* <a class={toggleState === 0 ? "resp-tab-item" : "resp-tab-item"} aria-controls="tab_item-0" role="tab" onClick={() => toggleTab(0)}>continue</a> */}
 										</div>
 									</div>
                                     <div className={toggleState === 2 ? "tab_item-2" : "tab-1 resp-tab-content"} aria-labelledby="tab_item-2">
