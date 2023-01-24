@@ -83,7 +83,7 @@ const Register = () => {
         SetLoading(true)
         e.preventDefault();
         try {
-          await fetch("http://44.202.98.199:9001/add_students", {
+          await fetch("http://3.88.249.114:9001/add_students", {
             
             method: "POST",
             body: JSON.stringify({
